@@ -1,50 +1,44 @@
 ##############################
 #### MANIPULATING STRINGS ####
 ##############################
-#first_char
-  # takes in a word
-  # returns the first letter of the word
-  # lowercases the first letter of the word
+def first_char(string)
+  string[0].downcase
+end
 
-#polly_wanna
-  # takes in a word
-  # echoes the original word
-  # repeats the original word 3 times
-  # returns a string with the word repeated
+def polly_wanna(string)
+puts string
+result = ''
+3.times do
+  result += string
+end
+result
+end
 
-#count_chars
-  # takes in a word
-  # returns the number of characters in the word
+def count_chars(word)
+  word.length
+end
 
-#yell
-  # takes in a message
-  # convert the message to uppercase
-  # adds an exclamation point to the end of the message
-  # returns the message
+def yell(message)
+message.upcase+'!'
+end
 
-## STRETCH ##
-#to_telegram
-  # takes in a message
-  # replaces periods with ' STOP'
-  # returns the updated message
-
-
-#spell_out
-  # takes in a string
-  # converts the string to lowercase
-  # returns the input string, with characters seperated by dashes
+# STRETCH ##
+def to_telegram(message)
+  message.gsub(".", " STOP")
+end
 
 
-#seperate
-  # takes in a string
-  # seperates characters with a custom seperator, when supplied with one
-  # seperates characters with dashes (by default)
-  # returns the modified string
+def spell_out(string)
+  string.downcase.split("").join("-")
+end
+
+def seperate(string, seperator = "-" )
+  string.downcase.split("").join(seperator)
+end
 
 ## STRETCH ##
-#croon
-  # seperates word characters with dashes
-  # preserves whitespace between words
+def croon(message)
+message.split(" ").map {|word| word.split("").join("-") }.join(" ")end
 
 #palindrome_word?
   # determines whether a single word is a palindrome
